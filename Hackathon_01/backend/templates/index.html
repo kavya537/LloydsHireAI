@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+        .hero {
+            background: #0d6efd;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .form-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1 class="display-5">Lloyd's HIRE AI</h1>
+        <p class="lead">Smart Resume Screening & Email Automation Tool</p>
+    </div>
+
+    <div class="container mt-5">
+        <div class="form-section">
+            <form action="/result" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="requirement" class="form-label">Job Description / Requirement</label>
+                    <textarea name="requirement" class="form-control" rows="5" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Resume Source</label><br>
+                    <input type="radio" name="db_choice" value="upload" checked> Upload from System
+                    <input type="radio" name="db_choice" value="database" class="ms-3"> Use MongoDB Database
+                </div>
+
+                <div class="mb-3">
+                    <label for="resumes" class="form-label">Upload Resumes (if selected above)</label>
+                    <input type="file" name="resumes" class="form-control" multiple>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Match Resumes</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
